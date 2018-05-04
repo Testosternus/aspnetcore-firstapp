@@ -9,14 +9,30 @@ namespace PE1.BoydensJ.TestCsl
     {
         public static void Main(string[] args)
         {
+            var x = new ReeksService();
             IList<string> outputStrs = new List<string>();
 
-            var x = new ReeksService();
             var allNumbers = x.GeefReeks(10, 20);
-            foreach(int v in allNumbers)
+            outputStrs.Add("All numbers from min to max:");
+            foreach(int a in allNumbers)
             {
-                outputStrs.Add(v.ToString());
+                outputStrs.Add(a.ToString());
             }
+
+            var evenNumbers = x.GeefReeksEven(10, 20);
+            outputStrs.Add("All even from min to max:");
+            foreach(int e in evenNumbers)
+            {
+                outputStrs.Add(e.ToString());
+            }
+
+            var primes = x.GeefPriemGetallen(10, 20);
+            outputStrs.Add("All primes from min to max:");
+            foreach (int e in primes)
+            {
+                outputStrs.Add(e.ToString());
+            }
+
             Print(outputStrs);
             
             Console.ReadKey();
