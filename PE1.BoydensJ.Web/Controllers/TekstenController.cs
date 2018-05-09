@@ -10,7 +10,7 @@ namespace PE1.BoydensJ.Web.Controllers
 {
     public class TekstenController : Controller
     {
-        //GET: /Teksten/
+        //GET: /Texts/
         public IActionResult Index()
         {
             StringBuilder sb = new StringBuilder();

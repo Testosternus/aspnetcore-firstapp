@@ -33,5 +33,29 @@ namespace PE1.BoydensJ.Web.Controllers
 
             return Content(sb.ToString());
         }
+
+        [ActionName("IndexAlt")]
+        public IActionResult Index(int a=100, int b=200)
+        {
+            ReeksService rs = new ReeksService();
+            StringBuilder sb = new StringBuilder();
+
+            var allNumbers = rs.GeefReeks(a, b);
+            sb.Append("Getallenreeks\r\n");
+            foreach (int n in allNumbers)
+                sb.Append($"{n.ToString()} \r\n");
+
+            var evenNumbers = rs.GeefReeksEven(a, b);
+            sb.Append("Even getallen\r\n");
+            foreach (int e in evenNumbers)
+                sb.Append($"{e.ToString()} \r\n");
+
+            var primes = rs.GeefPriemGetallen(a, b);
+            sb.Append("Priemgetallen\r\n");
+            foreach (int p in primes)
+                sb.Append($"{p.ToString()} \r\n");
+
+            return Content(sb.ToString());
+        }
     }
 }
