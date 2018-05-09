@@ -42,6 +42,14 @@ namespace PE1.BoydensJ.Web
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "reeksen",
+                    template: "reeksen");
+
+                routes.MapRoute(
+                    name: "teksten",
+                    template: "teksten");
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });

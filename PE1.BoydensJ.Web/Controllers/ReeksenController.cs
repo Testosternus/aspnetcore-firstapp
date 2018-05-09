@@ -11,26 +11,25 @@ namespace PE1.BoydensJ.Web.Controllers
     public class ReeksenController : Controller
     {
         //GET: /Reeksen/
-        [HttpGet]
         public IActionResult Index()
         {
             ReeksService rs = new ReeksService();
             StringBuilder sb = new StringBuilder();
 
             var allNumbers = rs.GeefReeks(10, 20);
-            sb.Append("All numbers from min to max:");
+            sb.Append("All numbers from min to max:\r\n");
             foreach (int n in allNumbers)
-                sb.Append(n.ToString());
+                sb.Append($"{n.ToString()} \r\n");
 
             var evenNumbers = rs.GeefReeksEven(10, 20);
-            sb.Append("All even from min to max:");
+            sb.Append("All even from min to max:\r\n");
             foreach (int e in evenNumbers)
-                sb.Append(e.ToString());
+                sb.Append($"{e.ToString()} \r\n");
 
             var primes = rs.GeefPriemGetallen(10, 20);
-            sb.Append("All primes from min to max:");
+            sb.Append("All primes from min to max: \r\n");
             foreach (int p in primes)
-                sb.Append(p.ToString());
+                sb.Append($"{p.ToString()} \r\n");
 
             return Content(sb.ToString());
         }

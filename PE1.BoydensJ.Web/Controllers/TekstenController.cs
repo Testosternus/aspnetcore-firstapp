@@ -10,14 +10,15 @@ namespace PE1.BoydensJ.Web.Controllers
 {
     public class TekstenController : Controller
     {
+        //GET: /Teksten/
         public IActionResult Index()
         {
             StringBuilder sb = new StringBuilder();
             TekstService ts = new TekstService();
 
-            Task getNormal = ts.GetTekst("Jonathan Boydens", TekstMode.Normal);
+            var getNormal = ts.GetTekst("Jonathan Boydens", TekstMode.Normal);
             getNormal.Wait();
-            return Content(sb.ToString());
+            return Content(getNormal.ToString());
         }
     }
 }
