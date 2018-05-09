@@ -15,10 +15,17 @@ namespace PE1.BoydensJ.Web.Controllers
         {
             StringBuilder sb = new StringBuilder();
             TekstService ts = new TekstService();
+            IList<Task<string>> tasks = new List<Task<string>>();
 
-            var getNormal = ts.GetTekst("Jonathan Boydens", TekstMode.Normal);
-            getNormal.Wait();
-            return Content(getNormal.ToString());
+            tasks.Add(ts.GetTekst("Jonathan Boydens", TekstMode.Normal));
+            tasks.Add(ts.GetTekst("Jonathan Boydens", TekstMode.Reverse));
+            tasks.Add(ts.GetTekst("Jonathan Boydens", TekstMode.Ascii));
+
+            Task.WaitAll(tasks.ToArray());
+
+            foreach (var task in tasks)
+                sb.Append($"{task.Result} \r\n");
+            return Content(sb.ToString());
         }
     }
 }

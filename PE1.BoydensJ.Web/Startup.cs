@@ -43,11 +43,13 @@ namespace PE1.BoydensJ.Web
             {
                 routes.MapRoute(
                     name: "reeksen",
-                    template: "reeksen");
+                    template: "bla",
+                    defaults: new {controller = "Reeksen", action = "Index" });
 
                 routes.MapRoute(
                     name: "teksten",
-                    template: "teksten");
+                    template: "Texts",
+                    defaults: new {controller = "Teksten", action = "Index" });
 
                 routes.MapRoute(
                     name: "default",

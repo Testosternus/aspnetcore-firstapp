@@ -57,14 +57,13 @@ namespace PE1.BoydensJ.Lib
             switch (m)
             {
                 case TekstMode.Normal:
-                    outP =  input;
+                    outP =  "Normal: \r\n" + input;
                     break;
                 case TekstMode.Reverse:
-                    outP = new string(input.ToCharArray().Reverse().ToArray());
+                    outP = "Reverse: \r\n" + new string(input.ToCharArray().Reverse().ToArray());
                     break;
                 case TekstMode.Ascii:
-                    var resp = await httpClient.GetStringAsync($"http://artii.herokuapp.com/make?text={input}");
-                    outP =  resp.ToString();
+                    outP = "Ascii art: \r\n" + await httpClient.GetStringAsync($"http://artii.herokuapp.com/make?text={input}");
                     break;
                 default:
                     break;

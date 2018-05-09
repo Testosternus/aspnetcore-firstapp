@@ -1,7 +1,6 @@
-﻿using System;
-using PE1.BoydensJ.Lib;
+﻿using PE1.BoydensJ.Lib;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PE1.BoydensJ.TestCsl
