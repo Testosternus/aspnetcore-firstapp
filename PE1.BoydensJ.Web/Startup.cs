@@ -47,14 +47,14 @@ namespace PE1.BoydensJ.Web
                     defaults: new {controller = "Reeksen", action = "Index" });
 
                 routes.MapRoute(
+                    name: "reeksenAlt",
+                    template: "100/200",
+                    defaults: new { controller = "Reeksen", action = "IndexAlt" });
+
+                routes.MapRoute(
                     name: "teksten",
                     template: "Texts",
                     defaults: new {controller = "Teksten", action = "Index" });
-
-                routes.MapRoute(
-                    name: "reeksenAlt",
-                    template: "100/200",
-                    defaults: new {controller = "Reeksen", action = "IndexAlt" });
 
                 routes.MapRoute(
                     name: "default",

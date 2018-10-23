@@ -17,7 +17,7 @@ namespace PE1.BoydensJ.Lib
             foreach (int n in reeks)
                 yield return n;
         }
-
+        
         public IEnumerable<int> GeefReeksEven(int min, int max)
         {
             int count = calcCount(min, max);
@@ -36,7 +36,7 @@ namespace PE1.BoydensJ.Lib
                                                 .All(y => x % y != 0));
             //.Concat(new int[] { 2, 3 })
             //.OrderBy(x => x);
-
+    
             foreach (int n in reeks)
                 yield return n;
         }
