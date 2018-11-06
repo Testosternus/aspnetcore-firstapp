@@ -10,13 +10,13 @@ namespace PE1.BoydensJ.Web.Controllers
 {
     public class TekstenController : Controller
     {
+        private TekstService ts = new TekstService();
         //GET: /Texts/
         public IActionResult Index()
         {
             StringBuilder sb = new StringBuilder();
-            TekstService ts = new TekstService();
+            
             IList<Task<string>> tasks = new List<Task<string>>();
-
             tasks.Add(ts.GetTekst("Jonathan Boydens", TekstMode.Normal));
             tasks.Add(ts.GetTekst("Jonathan Boydens", TekstMode.Reverse));
             tasks.Add(ts.GetTekst("Jonathan Boydens", TekstMode.Ascii));
