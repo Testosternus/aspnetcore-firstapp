@@ -10,10 +10,10 @@ namespace PE1.BoydensJ.Web.Controllers
 {
     public class ReeksenController : Controller
     {
+        private ReeksService rs = new ReeksService();
         //GET: /Reeksen/
         public IActionResult Index()
         {
-            ReeksService rs = new ReeksService();
             StringBuilder sb = new StringBuilder();
 
             var allNumbers = rs.GeefReeks(10, 20);
@@ -37,7 +37,6 @@ namespace PE1.BoydensJ.Web.Controllers
         [ActionName("IndexAlt")]
         public IActionResult Index(int a=100, int b=200)
         {
-            ReeksService rs = new ReeksService();
             StringBuilder sb = new StringBuilder();
 
             var allNumbers = rs.GeefReeks(a, b);
